@@ -35,3 +35,4 @@ action:
       milliseconds: 750
 
 mode: single
+max_exceeded: silent
