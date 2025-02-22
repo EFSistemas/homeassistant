@@ -1,18 +1,25 @@
 blueprint:
   name: Notificar SMS
-  description: Enviar SMS para o telefone informado
+  description: Notificar eventos do HA via SMS
   domain: script
 mode: queued
 fields:
+  telefone:
+    selector:
+      text: null
+    name: Telefone
+    description: Informe o número do telefone que irá receber o SMS
+    required: true
   mensagem:
     selector:
       text: null
-    name: telefone
-    description: Informe o número do telefone
+    name: Mensagem
+    description: Preencha com o texto que será enviado no SMS
     required: true
 sequence:
   - action: notify.twilio_sms
     data:
-      message: "The sun has set"
+      message: "{{ mensagem }}"
       target:
-        - '"{{ mensagem }}"'
+        - "{{ telefone }}"
+      data: null
