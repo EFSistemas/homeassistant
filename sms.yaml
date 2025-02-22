@@ -1,0 +1,12 @@
+blueprint:
+  name: Notificar SMS
+  description: Enviar SMS para o telefone informado
+  domain: script
+mode: queued
+fields:
+  mensagem:
+    selector:
+      text: null
+    name: telefone
+    description: Informe o número do telefone
+    required: true
