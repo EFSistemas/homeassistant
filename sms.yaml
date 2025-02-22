@@ -10,3 +10,9 @@ fields:
     name: telefone
     description: Informe o número do telefone
     required: true
+sequence:
+  - action: notify.twilio_sms
+    data:
+      message: "The sun has set"
+      target:
+        - '"{{ mensagem }}"'
