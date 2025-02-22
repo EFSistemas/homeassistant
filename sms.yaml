@@ -17,7 +17,7 @@ fields:
     description: Preencha com o texto que será enviado no SMS
     required: true
 sequence:
-  - action: notify.twilio_sms
+  - action: notify.sms
     data:
       message: "{{ mensagem }}"
       target:
